@@ -67,49 +67,41 @@
                             >
                                 <option selected>Select a Node by ID</option>
                                 
-                                    <option value="Economic Growth">Economic Growth</option>
+                                    <option value="Indian Equity Market">Indian Equity Market</option>
                                 
-                                    <option value="Consumption">Consumption</option>
+                                    <option value="Company Earnings">Company Earnings</option>
                                 
-                                    <option value="Investment Growth">Investment Growth</option>
+                                    <option value="Nominal GDP Growth">Nominal GDP Growth</option>
                                 
-                                    <option value="Transition to New Growth Drivers">Transition to New Growth Drivers</option>
+                                    <option value="Earnings Growth Rate">Earnings Growth Rate</option>
                                 
-                                    <option value="Housing Sales">Housing Sales</option>
+                                    <option value="Long-term Equity Returns">Long-term Equity Returns</option>
                                 
-                                    <option value="Property Market Policies">Property Market Policies</option>
+                                    <option value="Foreign Direct Investment">Foreign Direct Investment</option>
                                 
-                                    <option value="Local Government Debt Restructuring">Local Government Debt Restructuring</option>
+                                    <option value="Corporate Deleveraging">Corporate Deleveraging</option>
                                 
-                                    <option value="Monetary and Fiscal Stimulus">Monetary and Fiscal Stimulus</option>
+                                    <option value="Asset Quality">Asset Quality</option>
                                 
-                                    <option value="Innovative Approaches">Innovative Approaches</option>
+                                    <option value="Valuation for Indian Equities">Valuation for Indian Equities</option>
                                 
-                                    <option value="Geopolitical Tensions">Geopolitical Tensions</option>
+                                    <option value="Inflation">Inflation</option>
                                 
-                                    <option value="Chinese Equities Re-rating">Chinese Equities Re-rating</option>
+                                    <option value="Consumer Spending">Consumer Spending</option>
                                 
-                                    <option value="US Yields">US Yields</option>
+                                    <option value="Indian Rupee Exchange Rate">Indian Rupee Exchange Rate</option>
                                 
-                                    <option value="USD Strength">USD Strength</option>
+                                    <option value="Indian Rupee Depreciation">Indian Rupee Depreciation</option>
                                 
-                                    <option value="Emerging Markets Growth">Emerging Markets Growth</option>
+                                    <option value="Indian General Election">Indian General Election</option>
                                 
-                                    <option value="Earnings Upgrades">Earnings Upgrades</option>
+                                    <option value="Political Impact on RBI's Policy">Political Impact on RBI's Policy</option>
                                 
-                                    <option value="Margin Improvement">Margin Improvement</option>
+                                    <option value="Reserve Bank of India's Policy">Reserve Bank of India's Policy</option>
                                 
-                                    <option value="Sales Growth">Sales Growth</option>
+                                    <option value="Monetary Policy Impact">Monetary Policy Impact</option>
                                 
-                                    <option value="Stock Selection">Stock Selection</option>
-                                
-                                    <option value="Property-Related Sectors">Property-Related Sectors</option>
-                                
-                                    <option value="Healthcare Sector">Healthcare Sector</option>
-                                
-                                    <option value="Regulatory Storm">Regulatory Storm</option>
-                                
-                                    <option value="Stock Themes">Stock Themes</option>
+                                    <option value="Business-Friendly Policies">Business-Friendly Policies</option>
                                 
                             </select>
                         </div>
@@ -331,8 +323,8 @@
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Economic Growth", "label": "Economic Growth", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Consumption", "label": "Consumption", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Investment Growth", "label": "Investment Growth", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Transition to New Growth Drivers", "label": "Transition to New Growth Drivers", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Housing Sales", "label": "Housing Sales", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Property Market Policies", "label": "Property Market Policies", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Local Government Debt Restructuring", "label": "Local Government Debt Restructuring", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Monetary and Fiscal Stimulus", "label": "Monetary and Fiscal Stimulus", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Innovative Approaches", "label": "Innovative Approaches", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Geopolitical Tensions", "label": "Geopolitical Tensions", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Chinese Equities Re-rating", "label": "Chinese Equities Re-rating", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "US Yields", "label": "US Yields", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "USD Strength", "label": "USD Strength", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Emerging Markets Growth", "label": "Emerging Markets Growth", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Earnings Upgrades", "label": "Earnings Upgrades", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Margin Improvement", "label": "Margin Improvement", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Sales Growth", "label": "Sales Growth", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Stock Selection", "label": "Stock Selection", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Property-Related Sectors", "label": "Property-Related Sectors", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Healthcare Sector", "label": "Healthcare Sector", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Regulatory Storm", "label": "Regulatory Storm", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Stock Themes", "label": "Stock Themes", "shape": "dot", "size": 10}]);
-                  edges = new vis.DataSet([{"from": "Economic Growth", "label": "Positive correlation", "to": "Consumption", "width": 1}, {"from": "Economic Growth", "label": "Positive correlation", "to": "Investment Growth", "width": 1}, {"from": "Economic Growth", "label": "Long-term goal", "to": "Transition to New Growth Drivers", "width": 1}, {"from": "Housing Sales", "label": "Positive impact", "to": "Economic Growth", "width": 1}, {"from": "Property Market Policies", "label": "Causal effect", "to": "Housing Sales", "width": 1}, {"from": "Local Government Debt Restructuring", "label": "Uncertain impact", "to": "Economic Growth", "width": 1}, {"from": "Monetary and Fiscal Stimulus", "label": "Limited impact", "to": "Economic Growth", "width": 1}, {"from": "Innovative Approaches", "label": "High-risk, high-reward", "to": "Economic Growth", "width": 1}, {"from": "Geopolitical Tensions", "label": "Risk factor", "to": "Chinese Equities Re-rating", "width": 1}, {"from": "US Yields", "label": "Risk factor", "to": "Chinese Equities Re-rating", "width": 1}, {"from": "USD Strength", "label": "Risk factor", "to": "Chinese Equities Re-rating", "width": 1}, {"from": "Emerging Markets Growth", "label": "Impact on sentiment", "to": "Chinese Equities Re-rating", "width": 1}, {"from": "Earnings Upgrades", "label": "Positive influence", "to": "Chinese Equities Re-rating", "width": 1}, {"from": "Margin Improvement", "label": "Direct impact", "to": "Earnings Upgrades", "width": 1}, {"from": "Sales Growth", "label": "Direct impact", "to": "Earnings Upgrades", "width": 1}, {"from": "Stock Selection", "label": "Investment strategy", "to": "Chinese Equities Re-rating", "width": 1}, {"from": "Property-Related Sectors", "label": "Avoidance due to risk", "to": "Stock Selection", "width": 1}]);
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Indian Equity Market", "label": "Indian Equity Market", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Company Earnings", "label": "Company Earnings", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Nominal GDP Growth", "label": "Nominal GDP Growth", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Earnings Growth Rate", "label": "Earnings Growth Rate", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Long-term Equity Returns", "label": "Long-term Equity Returns", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Foreign Direct Investment", "label": "Foreign Direct Investment", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Corporate Deleveraging", "label": "Corporate Deleveraging", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Asset Quality", "label": "Asset Quality", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Valuation for Indian Equities", "label": "Valuation for Indian Equities", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Inflation", "label": "Inflation", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Consumer Spending", "label": "Consumer Spending", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Indian Rupee Exchange Rate", "label": "Indian Rupee Exchange Rate", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Indian Rupee Depreciation", "label": "Indian Rupee Depreciation", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Indian General Election", "label": "Indian General Election", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Political Impact on RBI\u0027s Policy", "label": "Political Impact on RBI\u0027s Policy", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Reserve Bank of India\u0027s Policy", "label": "Reserve Bank of India\u0027s Policy", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Monetary Policy Impact", "label": "Monetary Policy Impact", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Business-Friendly Policies", "label": "Business-Friendly Policies", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"from": "Indian Equity Market", "to": "Company Earnings", "width": 1}, {"from": "Nominal GDP Growth", "label": "Positive correlation", "to": "Company Earnings", "width": 1}, {"from": "Nominal GDP Growth", "to": "Earnings Growth Rate", "width": 1}, {"from": "Long-term Equity Returns", "to": "Company Earnings", "width": 1}, {"from": "Foreign Direct Investment", "label": "Positive influence", "to": "Earnings Growth Rate", "width": 1}, {"from": "Corporate Deleveraging", "label": "Positive influence", "to": "Earnings Growth Rate", "width": 1}, {"from": "Asset Quality", "label": "Positive influence", "to": "Earnings Growth Rate", "width": 1}, {"from": "Valuation for Indian Equities", "label": "Influence on returns", "to": "Long-term Equity Returns", "width": 1}, {"from": "Valuation for Indian Equities", "label": "Influence on earnings", "to": "Earnings Growth Rate", "width": 1}, {"from": "Inflation", "label": "Positive correlation", "to": "Consumer Spending", "width": 1}, {"from": "Indian Rupee Exchange Rate", "to": "Indian Rupee Depreciation", "width": 1}, {"from": "Indian General Election", "label": "Impact on governance and policies", "to": "Political Impact on RBI\u0027s Policy", "width": 1}, {"from": "Reserve Bank of India\u0027s Policy", "label": "Policy response to inflation", "to": "Monetary Policy Impact", "width": 1}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });
@@ -343,7 +335,7 @@
                   // adding nodes and edges to the graph
                   data = {nodes: nodes, edges: edges};
 
-                  var options = {"nodes": {"borderWidth": null, "borderWidthSelected": null, "opacity": null, "size": null, "color": {"inherit": true}}, "edges": {"arrows": {"to": {"enabled": true}}, "color": {"inherit": true}, "dashes": true, "font": {"size": 8, "face": "tahoma"}, "selfReferenceSize": null, "selfReference": {"angle": 0.7853981633974483}, "smooth": {"forceDirection": "none"}}, "physics": {"minVelocity": 0.75}};
+                  var options = {"nodes": {"borderWidth": 2, "borderWidthSelected": 2, "opacity": 1, "size": 18}, "edges": {"arrows": {"to": {"enabled": true}}, "color": {"inherit": true}, "dashes": true, "font": {"size": 8}, "selfReferenceSize": null, "selfReference": {"angle": 0.7853981633974483}, "smooth": {"forceDirection": "none"}}, "physics": {"minVelocity": 0.75}};
 
                   
 
