@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 650px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "Hamas Attack on Israel", "label": "Hamas Attack on Israel", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Oil Prices", "label": "Oil Prices", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Saudi-Israeli Deal", "label": "Saudi-Israeli Deal", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Global Economy", "label": "Global Economy", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Arab Oil Embargo", "label": "Arab Oil Embargo", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Oil Demand", "label": "Oil Demand", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Electric Vehicles", "label": "Electric Vehicles", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Spare Production Capacity", "label": "Spare Production Capacity", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "OPEC Actions", "label": "OPEC Actions", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Iranian Oil Production", "label": "Iranian Oil Production", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "US Sanctions", "label": "US Sanctions", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Russian Oil", "label": "Russian Oil", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Venezuelan Oil", "label": "Venezuelan Oil", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Saudi-Iranian Relations", "label": "Saudi-Iranian Relations", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Strategic Petroleum Reserve", "label": "Strategic Petroleum Reserve", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "President Approval Rating", "label": "President Approval Rating", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Gold Demand", "label": "Gold Demand", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "U.S. Dollar Value", "label": "U.S. Dollar Value", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "USD Demand", "label": "USD Demand", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "U.S. Treasuries Demand", "label": "U.S. Treasuries Demand", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Bond Yields", "label": "Bond Yields", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Stock Market", "label": "Stock Market", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Iran-US Relations", "label": "Iran-US Relations", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "U.S.-Israel-Saudi Arabia Relations", "label": "U.S.-Israel-Saudi Arabia Relations", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Saudi Arabia\u0027s Reaction", "label": "Saudi Arabia\u0027s Reaction", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "U.S. Dysfunction", "label": "U.S. Dysfunction", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "U.S. Defense Capability", "label": "U.S. Defense Capability", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Geopolitical Risk", "label": "Geopolitical Risk", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Safe Haven Assets", "label": "Safe Haven Assets", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "President Approval RatingGeopolitical Risk", "label": "President Approval RatingGeopolitical Risk", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"from": "Hamas Attack on Israel", "label": "Rising oil prices", "to": "Oil Prices", "width": 1}, {"from": "Hamas Attack on Israel", "label": "Influence on the deal", "to": "Saudi-Israeli Deal", "width": 1}, {"from": "Global Economy", "label": "Impact on oil prices", "to": "Oil Prices", "width": 1}, {"from": "Arab Oil Embargo", "label": "Historical context for oil prices", "to": "Oil Prices", "width": 1}, {"from": "Oil Demand", "label": "Moderation of oil prices", "to": "Oil Prices", "width": 1}, {"from": "Electric Vehicles", "label": "Impact on oil demand", "to": "Oil Demand", "width": 1}, {"from": "Spare Production Capacity", "label": "Effect on oil prices", "to": "Oil Prices", "width": 1}, {"from": "OPEC Actions", "label": "Influence on oil prices", "to": "Oil Prices", "width": 1}, {"from": "Iranian Oil Production", "label": "Effect on oil prices", "to": "Oil Prices", "width": 1}, {"from": "US Sanctions", "label": "Impact on Iranian oil production", "to": "Iranian Oil Production", "width": 1}, {"from": "Russian Oil", "label": "Effect on oil prices", "to": "Oil Prices", "width": 1}, {"from": "Venezuelan Oil", "label": "Impact on oil prices", "to": "Oil Prices", "width": 1}, {"from": "Saudi-Israeli Deal", "label": "Impact on relations", "to": "Saudi-Iranian Relations", "width": 1}, {"from": "Saudi-Israeli Deal", "label": "Effect on oil prices", "to": "Oil Prices", "width": 1}, {"from": "Saudi-Iranian Relations", "label": "Impact on oil prices", "to": "Oil Prices", "width": 1}, {"from": "Strategic Petroleum Reserve", "label": "Impact on oil prices", "to": "Oil Prices", "width": 1}, {"from": "Strategic Petroleum Reserve", "label": "Impact on approval rating", "to": "President Approval Rating", "width": 1}, {"from": "Gold Demand", "label": "Increased gold demand tends to strengthen the U.S. dollar.", "to": "U.S. Dollar Value", "width": 1}, {"from": "USD Demand", "label": "Higher demand for the USD can strengthen its value.", "to": "U.S. Dollar Value", "width": 1}, {"from": "U.S. Treasuries Demand", "label": "Higher demand for U.S. Treasuries can affect the value of the USD.", "to": "U.S. Dollar Value", "width": 1}, {"from": "Bond Yields", "label": "Higher bond yields can influence the U.S. dollar value.", "to": "U.S. Dollar Value", "width": 1}, {"from": "Bond Yields", "label": "Higher bond yields can impact the stock market.", "to": "Stock Market", "width": 1}, {"from": "Iran-US Relations", "label": "Iran-US relations can affect Iranian oil production.", "to": "Iranian Oil Production", "width": 1}, {"from": "Iran-US Relations", "label": "Iran-US relations can influence relations between these countries.", "to": "U.S.-Israel-Saudi Arabia Relations", "width": 1}, {"from": "Saudi Arabia\u0027s Reaction", "label": "Saudi Arabia\u0027s response can impact relations between the U.S., Israel, and Saudi Arabia.", "to": "U.S.-Israel-Saudi Arabia Relations", "width": 1}, {"from": "U.S. Dysfunction", "label": "Dysfunction in U.S. politics may affect U.S. defense capability.", "to": "U.S. Defense Capability", "width": 1}, {"from": "Geopolitical Risk", "label": "Rising geopolitical risk increases demand for safe haven assets.", "to": "Safe Haven Assets", "width": 1}, {"from": "Geopolitical Risk", "to": "Gold Demand", "width": 1}, {"from": "Geopolitical Risk", "to": "USD Demand", "width": 1}, {"from": "Geopolitical Risk", "to": "U.S. Treasuries Demand", "width": 1}, {"from": "Geopolitical Risk", "to": "Iran-US Relations", "width": 1}, {"from": "Geopolitical Risk", "to": "Saudi Arabia\u0027s Reaction", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"nodes": {"borderWidth": 2, "borderWidthSelected": 2, "opacity": 1, "size": 18}, "edges": {"arrows": {"to": {"enabled": true}}, "color": {"inherit": true}, "dashes": true, "font": {"size": 10}, "selfReferenceSize": null, "selfReference": {"angle": 0.7853981633974483}, "smooth": {"forceDirection": "none"}}, "physics": {"minVelocity": 0.75}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
